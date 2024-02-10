@@ -2,7 +2,7 @@
 	path = roles/nginx
 	url = https://github.com/louismichel100/role_nginxx.git
 [submodule "roles/nginx/systemd"]
-	path = roles/nginx
+	path = roles/nginx/systemd
 	url = https://github.com/systemd/systemd.git
 [submodule "roles/webapp"]
 	path = roles/webapp
