@@ -20,3 +20,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         #artifacts: "release.tar.gz,foo/*.txt"
         #bodyFile: "body.md"
+    - uses: byteever/action-build-zip@master
