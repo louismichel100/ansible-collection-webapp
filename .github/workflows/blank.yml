@@ -18,7 +18,7 @@ jobs:
       run: git submodule update --init --recursive
     - uses: ncipollo/release-action@v1
       with:
-        token: '${{ secrets.ACCESS_TOKEN }}'
+        token: '${{ secrets.GITHUB_TOKEN }}'
         ref: 'main'
         submodules: recursive
         fetch-depth: 0
