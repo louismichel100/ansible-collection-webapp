@@ -23,9 +23,9 @@ jobs:
       with:
         token: '${{ secrets.GITHUB_TOKEN }}'
         repository: '${{ github.repository }}'
-        ref: 'main'
-        submodules: recursive
-        fetch-depth: 0
+          # ref: 'main'
+          # submodules: recursive
+          # fetch-depth: 0
           # - uses: byteever/action-build-zip@master
         #artifacts: "release.tar.gz,foo/*.txt"
         #bodyFile: "body.md"
