@@ -16,7 +16,7 @@ jobs:
       run: git submodule foreach --recursive 'git checkout main && git pull'
     - name: Checkout Submodules
       run: git submodule update --init --recursive
-    - uses: ncipollo/release-action@v2
+    - uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - uses: byteever/action-build-zip@master
