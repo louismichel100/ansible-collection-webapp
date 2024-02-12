@@ -18,9 +18,10 @@ jobs:
       run: git submodule update --init --recursive
     - uses: ncipollo/release-action@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: '${{ secrets.ACCESS_TOKEN }}'
         ref: 'main'
-        submodules: true
+        submodules: recursive
+        fetch-depth: 0
           # - uses: byteever/action-build-zip@master
         #artifacts: "release.tar.gz,foo/*.txt"
         #bodyFile: "body.md"
