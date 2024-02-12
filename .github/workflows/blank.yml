@@ -6,7 +6,7 @@ on:
     - '*'
 
 jobs:
-  miki100:
+  miki101:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -19,6 +19,8 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: byteever/action-build-zip@master
+        ref: 'main'
+        submodules: true
+          # - uses: byteever/action-build-zip@master
         #artifacts: "release.tar.gz,foo/*.txt"
         #bodyFile: "body.md"
