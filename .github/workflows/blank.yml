@@ -16,12 +16,13 @@ jobs:
       run: git submodule foreach --recursive 'git checkout main && git pull'
     - name: Checkout Submodules
       run: git submodule update --init --recursive
-    - uses: ncipollo/release-action@v1
+        # - uses: ncipollo/release-action@v1
+        # with:
+        # token: '${{ secrets.GITHUB_TOKEN }}'
+    - uses: pozetroninc/github-action-get-latest-release@master
       with:
         token: '${{ secrets.GITHUB_TOKEN }}'
-    - uses: actions/checkout@v3
-      with:
-        token: '${{ secrets.GITHUB_TOKEN }}'
+        repository: '${{ github.repository }}'
         ref: 'main'
         submodules: recursive
         fetch-depth: 0
