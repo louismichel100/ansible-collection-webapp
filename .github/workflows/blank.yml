@@ -19,10 +19,11 @@ jobs:
         # - uses: ncipollo/release-action@v1
         # with:
         # token: '${{ secrets.GITHUB_TOKEN }}'
-    - uses: pozetroninc/github-action-get-latest-release@master
+        # - uses: pozetroninc/github-action-get-latest-release@master
+    - uses: "ergebnis/.github/actions/github/release/create@1.8.0"
       with:
-        token: '${{ secrets.GITHUB_TOKEN }}'
-        repository: '${{ github.repository }}'
+        github-token: '${{ secrets.GITHUB_TOKEN }}'
+          # repository: '${{ github.repository }}'
           # ref: 'main'
           # submodules: recursive
           # fetch-depth: 0
