@@ -16,17 +16,15 @@ jobs:
       run: git submodule foreach --recursive 'git checkout main && git pull'
     - name: Checkout Submodules
       run: git submodule update --init --recursive
-        # - uses: ncipollo/release-action@v1
-        # with:
-        # token: '${{ secrets.GITHUB_TOKEN }}'
-        # - uses: pozetroninc/github-action-get-latest-release@master
-    - uses: "ergebnis/.github/actions/github/release/create@1.8.0"
+    - name: Set up python 3
+      uses: actions/setup-python@v2
       with:
-        github-token: '${{ secrets.GITHUB_TOKEN }}'
-          # repository: '${{ github.repository }}'
-          # ref: 'main'
-          # submodules: recursive
-          # fetch-depth: 0
-          # - uses: byteever/action-build-zip@master
-        #artifacts: "release.tar.gz,foo/*.txt"
-        #bodyFile: "body.md"
+        python-version: '3.x'
+    - name: Install test dependencies
+      run: pip3 install ansible
+    - name: create collection
+      run: ansible-galaxy collection build
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "*.tar.gz"
+        token: ${{ secrets.GITHUB_TOKEN }}
